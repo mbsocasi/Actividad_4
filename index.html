@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom de Imagen</title>
+  <style>
+    /* Estilo inicial de la imagen */
+    #miImagen {
+      width: 100px;
+      transition: width 0.5s ease-in-out;
+      
+    }
+
+    .content{
+      
+      width: 80%;
+      margin: auto;
+      margin-top: 20%;
+      display: grid;
+      place-content: center;
+    }
+    button{
+      display: block;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background-color: #e60e0e;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="content">
+
+    <img id="miImagen" src="boom.png" alt="Imagen"><br>
+    <!-- Botón para aumentar o disminuir el zoom -->
+    <button onclick="toggleZoom()">BOOM!!!!</button>
+
+  </div>
+  <!-- Imagen a la que se le aplicará el zoom -->
+
+
+  <script>
+    // Variable para rastrear el estado del zoom
+    let zoomedIn = false;
+
+    // Función para aumentar o disminuir el tamaño de la imagen
+    function toggleZoom() {
+      const imagen = document.getElementById("miImagen");
+
+      // Cambia el tamaño según el estado actual
+      if (zoomedIn) {
+        imagen.style.width = "100px"; // Tamaño original
+      } else {
+        imagen.style.width = "300px"; // Nuevo tamaño
+      }
+
+      // Invierte el estado
+      zoomedIn = !zoomedIn;
+    }
+  </script>
+
+</body>
+
+</html>
